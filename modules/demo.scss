@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html, body {
+    background-color: #efefef;
+}
+.alipay {
+    width: 800px;
+    margin: 30px auto;
+    padding-top: 50px;
+    min-height: 250px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    position: relative;
+    label {
+        margin: 0 20px 0 80px;
+    }
+    input {
+        padding: 10px 15px;
+        width: 350px;
+        outline: none;
+    }
+    ul {
+        position: absolute;
+        top: 88px;
+        left: 153px;
+        width: 351px;
+        padding: 5px 15px;
+        border: 1px solid #666;
+        background-color: #fff;
+        li {
+            line-height: 26px;
+            font-size: 12px;
+            color: #333;
+            &.hover,
+            &:hover {
+                background-color: #efefef;
+            }
+        }
+    }
+}

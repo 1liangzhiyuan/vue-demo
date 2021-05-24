@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="alipay">
+            <label for="username">用户名</label>
+            <input 
+                type="text"
+                id="username"
+                placeholder="请输入电子邮箱"
+                autocomplete="off"
+                v-model="msg"
+                @keydown.up.prevent="choosePrevLi"
+                @keyup.down="chooseNextLi"
+                @keyup.enter="enterChooseLi"
+            >
+            <!-- 显示列表：1 输入了内容， 2 有邮箱。 -->
+            <ul v-show="msg && dealEmail.length">
+                <!-- 邮箱要过滤,msg也要过滤 -->
+                <li 
+                    v-for="(item, index) in dealEmail"
+                    :key="item"
+                    :class="cls[index]"
+                    @click="msg = dealMsg + '@' + item + (item == '189' ? '.cn' : '.com')"
+                >{{dealMsg}}@{{item}}<template v-if="item == 189">.cn</template><template v-else>.com</template></li>
+            </ul>
+        </div>
+    </div>
+    <script src="./dist/00-2.js"></script>
+</body>
+</html>
